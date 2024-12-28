@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content">
+                    <!-- App Content Header -->
+                    <div class="app-content-header">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0 headerStyle">Users</h3><br/>
+                                </div>
+                            </div>
+
+                            <h:form>
+                                <!-- Table Wrapper -->
+                                <div class="card tblStyle">
+                                    <div class="table-responsive">
+                                        <table id="adminTable" class="table  table-hover listTbl" style="width: 100%;">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Role</th>
+                                                    <th>email</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Phone no</th>
+                                                    <th>Gender</th>
+                                                    <th>Specialization</th>
+                                                    <th>Status</th>
+                                                    <th>View More</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <ui:repeat value="#{userAdminViewBean.users}" var="item" varStatus="status">
+                                                    <tr>
+                                                        <td><h:outputText value="#{status.index+1}" /></td>
+                                                        <td><h:outputText value="#{item.roleId.name}" /></td>
+
+                                                        <td><h:outputText value="#{item.email}" /></td>
+
+                                                        <td><h:outputText value="#{item.firstName}" /></td>
+                                                        <td><h:outputText value="#{item.lastName}" /></td>
+                                                        <td><h:outputText value="#{item.phoneNo}" /></td>
+                                                        <td><h:outputText value="#{item.gender}" /></td>
+                                                        <td><h:outputText value="#{item.specialization}" /></td>
+                                                        <td><h:commandButton value="#{item.status}" 
+                                                                             class="#{item.status == 'Active' ? 'btn btn-success' : 'btn btn-danger'}" 
+                                                                             action="#{userAdminViewBean.toggleUserStatus()}" 
+                                                                             actionListener="#{userAdminViewBean.setSelectedUser(item)}" />     </td>                                                   
+                                                        <td>  
+                                                            <h:column>
+                                                                <h:commandLink 
+                                                                               action="#{userAdminViewBean.redirectToEdit(item)}" 
+                                                                               class="btn viewBtnStyle bi bi-eye-fill" />
+                                                            </h:column>
+                                                        </td>
+
+                                                    </tr>
+                                                </ui:repeat>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

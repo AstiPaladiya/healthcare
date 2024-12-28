@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0 headerStyle">Add Category</h3>
+                                </div>
+                                <br/>
+                                <h:form enctype="multipart/form-data">
+                                    <div class="card frmCard">
+                                        <h:panelGrid columns="1">
+                                            <!-- Role Selection -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="RoleId:" for="roleId" />
+                                                <h:selectOneMenu id="roleId" value="#{categoryBean.roleId}" title="RoleId" class="form-control inpt">
+                                                    <f:selectItems value="#{adminBean.getDataCollection()}" var="ct"
+                                                                   itemLabel="#{ct.name}" itemValue="#{ct.id}" />
+                                                </h:selectOneMenu>
+                                            </div><br/><br/>
+                                            
+                                            <!-- Category Name -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Name:" for="name" /><br/>
+                                                <h:inputText id="name" value="#{categoryBean.name}" class="form-control inpt" title="Name" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Category Description -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Description:" for="description" /><br/>
+                                                <h:inputTextarea rows="4" cols="30" id="description" value="#{categoryBean.description}" class="form-control inpt" title="Description" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Category Image -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Image:" for="image" /><br/>
+                                                <h:inputFile id="photo" value="#{categoryBean.photofile}" class="form-control inpt" />
+                                                <h:message for="photo" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Category Status -->
+<!--                                            <div class="form-group">
+                                                <h:outputLabel value="Status:" for="status" /><br/>
+                                                <h:inputText id="status" value="#{categoryBean.status}" class="form-control inpt" title="Status" />
+                                            </div><br/><br/>-->
+                                            
+                                            <!-- Submit Button -->
+                                            <div class="row">
+                                                <div class="col text">
+                                                    <h:commandButton value="Add Category" class="btn btn-primary me-2" action="#{categoryBean.addCategory()}" />
+                                                </div>
+                                            </div><br/><br/>
+                                        </h:panelGrid>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

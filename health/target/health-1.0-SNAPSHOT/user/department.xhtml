@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./userMaster.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                <section class="page-title bg-1">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block text-center">
+                                    <span class="text-white">All Department</span>
+                                    <h1 class="text-capitalize mb-5 text-lg">Care Department</h1>
+
+                                    <!-- <ul class="list-inline breadcumb-nav">
+                                      <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+                                      <li class="list-inline-item"><span class="text-white">/</span></li>
+                                      <li class="list-inline-item"><a href="#" class="text-white-50">All Department</a></li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section service-2">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7 text-center">
+                                <div class="section-title">
+                                    <h2>Department</h2>
+                                    <div class="divider mx-auto my-4"></div>
+                                    <p>Let's get to know more about all the departments of doctors available on the website. Discover their expertise and the services they offer to address your health needs</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <f:view>
+
+
+                                <ui:repeat var="category" value="#{departmentBean.doctorCategories}">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="department-block mb-5">
+                                            <!-- Category Image -->
+                                            <h:graphicImage value="http://localhost:8080/health/userimages/#{category.image}" alt="#{category.name}" class="img-fluid w-100" style="width: 100%; height: 250px;" />
+
+                                            <!-- Category Content -->
+                                            <div class="content">
+                                                <h4 class="mt-4 mb-2 title-color">#{category.name}</h4>
+                                                <p class="mb-4">#{category.description}</p>
+
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ui:repeat>
+
+                            </f:view>
+
+
+
+
+                        </div>
+                    </div>
+                </section>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

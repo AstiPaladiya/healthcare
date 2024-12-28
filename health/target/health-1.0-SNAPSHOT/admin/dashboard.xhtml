@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0">Dashboard</h3>
+                                </div><br/><br/>
+                                <div class="row">        
+                                    <!-- Role Card -->
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card text-white bg-primary">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Total User</h5>
+                                                <p class="card-text display-4">
+                                                    <span>#{userHomeBean.totalUsers}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Subscription Plan Card -->
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card text-white bg-success">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Subscription Plans</h5>
+                                                <p class="card-text display-4">
+                                                    <span>#{userHomeBean.totalSubscription}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Doctor Card -->
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card text-white bg-info">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Doctors</h5>
+                                                <p class="card-text display-4">
+                                                    <span>#{userHomeBean.activeDoctors}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Registered User Card -->
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card text-white bg-warning">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Registered Users</h5>
+                                                <p class="card-text display-4">
+                                                    <span>#{userHomeBean.activeUsers}</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                  
+                                </div>
+
+                                <h2>  Hello from Admins !!!</h2>
+                                <br/>
+                                <h2> ${helloBean.secureHello} </h2>
+                                <h:outputText id="tx" style="color:red" value="#{helloBean.message}"/> 
+                                <br/>
+                                <h:form>
+                                    <h:commandLink style="color:red" id="link" value="Logout" action="#{loginBean.logout()}"/>
+                                </h:form>  
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./userMaster.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                <section class="page-title bg-1">
+                    <div class="overlay"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="block text-center">
+                                    <span class="text-white">Our blog</span>
+                                    <h1 class="text-capitalize mb-5 text-lg">Blog articles</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+               <section class="section blog-wrap">
+    <div class="container">
+        <div class="row">
+            <ui:repeat var="category" value="#{blogViewBean.activeBlogs}">
+                <!-- Each blog card occupies half the row -->
+                <div class="col-lg-4 col-md-4 mb-5">
+                    <div class="blog-item">
+                        <div class="blog-thumb">
+                            <!-- Display blog image dynamically -->
+                            <h:graphicImage value="http://localhost:8080/health/userimages/#{category.image}" 
+                                            alt="#{category.name}" 
+                                            class="img-fluid" 
+                                            style="width: 100%; height: 250px;" />
+                        </div>
+
+                        <div class="blog-item-content">
+                            <!-- Display blog title dynamically -->
+                            <h2 class="mt-3 mb-3">
+                                <a href="#">#{category.name}</a>
+                            </h2>
+
+                            <!-- Display blog description dynamically -->
+                            <p class="mb-4">#{category.description}</p>
+
+                           
+                        </div>
+                    </div>
+                </div>
+            </ui:repeat>
+        </div>
+
+        <!-- Pagination -->
+<!--        <div class="row mt-5">
+            <div class="col-lg-8">
+                <nav class="pagination py-2 d-inline-block">
+                    <div class="nav-links">
+                        <span aria-current="page" class="page-numbers current">1</span>
+                        <a class="page-numbers" href="#">2</a>
+                        <a class="page-numbers" href="#">3</a>
+                        <a class="page-numbers" href="#"><i class="icofont-thin-double-right"></i></a>
+                    </div>
+                </nav>
+            </div>
+        </div>-->
+    </div>
+</section>
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

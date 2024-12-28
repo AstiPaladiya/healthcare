@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./doctorMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="mb-0 headerStyle">Checkup Booking</div><br/>
+                                </div><br/>
+                                <h:form>
+                                    <div class="card frmCard">
+                                        <h:panelGrid columns="1">
+                                            <div class="form-group">
+                                                <h:outputLabel value="Schedule :" for="name" /><br/>
+                                                <h:inputText id="name" value="#{checkupBookingBean.current.schedule}" class="form-control inpt" title="Name" /><br/>
+                                            </div><br/>
+                                            <div class="form-group">
+                                                <h:outputLabel value="Price :" for="status" /><br/>
+                                                <h:inputText id="status" value="#{checkupBookingBean.current.price}" title="Status" class="form-control inpt" />
+                                            </div><br/>
+                                            <div class="row">
+                                                <div class="col text-left">
+                                                    <h:commandButton action="#{checkupBookingBean.updateCheckupBooking()}" class="btn btn-primary" value="Update Checkup Booking"/>
+                                                </div>
+                                            </div>
+                                        </h:panelGrid>
+                                    </div>
+                                </h:form>
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

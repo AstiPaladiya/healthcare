@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./doctorMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0 headerStyle">Add Blog</h3>
+                                </div>
+                                <br/><br/>
+                                <h:form enctype="multipart/form-data">
+                                    <div class="card frmCard">
+                                        <h:panelGrid columns="1">
+                                            <div class="form-group">
+                                                <h:outputLabel value="Name :" for="name" /><br/>
+                                                <h:inputText  id="name" value="#{blogDoctorBean.name}" title="Name" class="form-control inpt" />
+                                            </div><br/>
+                                            <div class="form-group">
+                                                <h:outputLabel value="Description :" for="name" />
+                                                <h:inputTextarea rows="4" cols="30" id="description" value="#{blogDoctorBean.description}" title="Name" class="form-control inpt" />
+                                            </div><br/>
+                                            <div class="form-group">
+                                                <h:outputLabel value="Image:" for="image" />
+                                                <h:inputFile id="photo" value="#{blogDoctorBean.photofile}" class="form-control inpt" />
+                                                <h:message for="photo" /><br/>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col text-left">
+                                                    <h:commandButton value="Add Blog" action="#{blogDoctorBean.addBlog()}" class="btn btn-primary me-2" />
+                                                </div>
+                                            </div>
+                                        </h:panelGrid>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                 <div class="mb-0 headerStyle">Role</div><br/>
+                                </div><br/>
+                                <h:form>
+                                    <div class="card frmCard">
+                                    <h:panelGrid columns="2">
+                                        <div class="form-group">
+                                             <h:outputLabel value="Name:" for="name" /><br/>
+                                        <h:inputText id="name" value="#{adminBean.current.name}" class="form-control inpt" title="Name" /><br/>
+                                        </div><br/><br/>
+<!--                                        <h:outputLabel value="Status:" for="status" />
+                                        <h:inputText id="status" value="#{adminBean.current.status}" title="Status" />-->
+                                        <h:commandButton action="#{adminBean.updateRole()}" class="btn btn-primary" value="Update Role"/>
+                                    </h:panelGrid>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content">
+                    <div class="app-content-header">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0 headerStyle">Add Subscription</h3>
+                                </div>
+                                <br/>
+                                <h:form enctype="multipart/form-data">
+                                    <div class="card frmCard">
+                                        <h:panelGrid columns="1">
+                                            <!-- Plan Name -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Plan Name:" for="planName" /><br/>
+                                                <h:inputText id="planName" value="#{subscriptionBean.plan_name}" class="form-control inpt" title="Plan Name"  />
+                                            </div><br/><br/>
+
+                                            <!-- Plan Detail -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Plan Detail:" for="planDetail" /><br/>
+                                                <h:inputTextarea rows="4" cols="30" id="planDetail" value="#{subscriptionBean.plan_detail}" class="form-control inpt" title="Plan Detail"  />
+                                            </div><br/><br/>
+
+                                            <!-- Price -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Price:" for="price" /><br/>
+                                                <h:inputText id="price" value="#{subscriptionBean.price}" class="form-control inpt" title="Price"  />
+                                            </div><br/><br/>
+
+                                            <!-- Time Period -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Time Period:" for="timePeriod" /><br/>
+                                                <h:inputText id="timePeriod" value="#{subscriptionBean.time_period}" class="form-control inpt" title="Time Period"  />
+                                            </div><br/><br/>
+
+                                            <!-- Status -->
+<!--                                            <div class="form-group">
+                                                <h:outputLabel value="Status:" for="status" /><br/>
+                                                <h:inputText id="status" value="#{subscriptionBean.status}" class="form-control inpt" title="Status" required="true" requiredMessage="Status is required." />
+                                            </div><br/><br/>-->
+
+                                            <!-- Submit Button -->
+                                            <div class="row">
+                                                <div class="col text">
+                                                    <h:commandButton value="Add Subscription" class="btn btn-primary me-2" action="#{subscriptionBean.addSubscription()}" />
+                                                </div>
+                                            </div><br/><br/>
+                                        </h:panelGrid>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

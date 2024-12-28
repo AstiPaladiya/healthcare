@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./userMaster.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <section class="page-title bg-1">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="block text-center">
+                                        <span class="text-white">Book your Seat</span>
+                                        <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
+
+                                        <!-- <ul class="list-inline breadcumb-nav">
+                                          <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+                                          <li class="list-inline-item"><span class="text-white">/</span></li>
+                                          <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
+                                        </ul> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="appoinment section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="mt-3">
+                                        <div class="feature-icon mb-3">
+                                            <i class="icofont-support text-lg"></i>
+                                        </div>
+                                        <span class="h3">Call for an Emergency Service!</span>
+                                        <h2 class="text-color mt-3">+84 789 1256 </h2>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
+                                        <h2 class="mb-2 title-color">Book an appoinment</h2>
+                                        <p class="mb-4">Troublesome statements are convenient, rejecting acknowledgment, born superior but corrupt and desiring this. Sorrows and similar situations dissolve.</p>
+                                        <h:form id="appointmentForm" class="appointment-form">
+                                            <div class="row">
+
+
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <h:selectOneMenu value="#{userAppointment.selectedSchedule}" class="form-control" id="scheduleDropdown">
+                                                            <f:selectItem itemValue="" itemLabel="Select Schedule" noSelectionOption="true"/>
+                                                            <f:selectItems value="#{userAppointment.availableSchedules}" var="s" itemLabel="#{s.schedule}" itemValue="#{s.id}"  />
+                                                        </h:selectOneMenu>
+                                                    </div>  
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <h:inputText value="#{userAppointment.appointmentDate}" id="date" class="form-control" p:placeholder="Apponintment Date dd-mm-yyyy" >
+                                                            <f:convertDateTime pattern="dd-MM-yyyy" />
+                                                        </h:inputText>
+                                                    </div>
+                                                </div>
+                                                <!--                                                <div class="col-lg-6">
+                                                                                                    <div class="form-group">
+                                                                                                        <h:inputText value="#{userAppointment.apointmentTime}" id="time" class="form-control" p:placeholder="Appointment Time">
+                                                                                                            <f:convertDateTime pattern="HH:mm" />
+                                                                                                        </h:inputText>
+                                                                                                    </div>
+                                                                                                </div>-->
+
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <h:inputText value="#{userAppointment.email}" id="email" class="form-control" p:placeholder="Paitent Email-Id" />
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <h:inputText value="#{userAppointment.phoneNo}" id="phone" class="form-control" p:placeholder="Paitent Phone Number" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group-2 ">
+                                                <div class="form-group">
+                                                    <h:inputText value="#{userAppointment.name}" id="name" class="form-control" p:placeholder="Paitent Full Name" />
+                                                </div>
+                                            </div>
+                                            <!-- Message Textarea -->
+                                            <div class="form-group-2 mb-4">
+                                                <h:inputTextarea value="#{userAppointment.message}" id="message" rows="6" class="form-control" p:placeholder="Your Message" />
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <h:commandButton value="Make Appointment" id="addAppoinment"  class="btn btn-main btn-round-full" action="#{userAppointment.addRecord()}" />
+                                        </h:form>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--</div>-->
+                        </div>
+                    </section>
+                  
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

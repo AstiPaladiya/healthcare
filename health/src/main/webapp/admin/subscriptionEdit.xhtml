@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0 headerStyle">Edit Subscription</h3>
+                                </div>
+                                <br/>
+                                <h:form enctype="multipart/form-data">
+                                    <div class="card frmCard">
+                                        <h:panelGrid columns="1">
+                                            
+                                            <!-- Subscription ID -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Id:" for="id" />
+                                                <h:inputText id="id" value="#{subscriptionBean.current.id}" class="form-control inpt" 
+                                                             required="true" requiredMessage="The Id field is required." />
+                                                <h:message for="id" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Plan Name -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Plan Name:" for="planName" />
+                                                <h:inputText id="planName" value="#{subscriptionBean.current.planName}" 
+                                                             class="form-control inpt" required="true" 
+                                                             requiredMessage="The Plan Name field is required." />
+                                                <h:message for="planName" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Plan Detail -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Plan Detail:" for="planDetail" />
+                                                <h:inputTextarea rows="4" cols="30" id="planDetail" value="#{subscriptionBean.current.planDetail}" 
+                                                                 class="form-control inpt" required="true" 
+                                                                 requiredMessage="The Plan Detail field is required." />
+                                                <h:message for="planDetail" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Price -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Price:" for="price" />
+                                                <h:inputText id="price" value="#{subscriptionBean.current.price}" 
+                                                             class="form-control inpt" required="true" 
+                                                             requiredMessage="The Price field is required." />
+                                                <h:message for="price" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Time Period -->
+                                            <div class="form-group">
+                                                <h:outputLabel value="Time Period:" for="timePeriod" />
+                                                <h:inputText id="timePeriod" value="#{subscriptionBean.current.timePeriod}" 
+                                                             class="form-control inpt" required="true" 
+                                                             requiredMessage="The Time Period field is required." />
+                                                <h:message for="timePeriod" />
+                                            </div><br/><br/>
+                                            
+                                            <!-- Status -->
+<!--                                            <div class="form-group">
+                                                <h:outputLabel value="Status:" for="status" />
+                                                <h:inputText id="status" value="#{subscriptionBean.current.status}" 
+                                                             class="form-control inpt" required="true" 
+                                                             requiredMessage="The Status field is required." />
+                                                <h:message for="status" />
+                                            </div><br/><br/>-->
+                                            
+                                            <!-- Submit Button -->
+                                            <div class="row">
+                                                <div class="col text">
+                                                    <h:commandButton value="Update Subscription" class="btn btn-primary me-2" 
+                                                                     action="#{subscriptionBean.updateSubscription()}" />
+                                                </div>
+                                            </div><br/><br/>
+                                        </h:panelGrid>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

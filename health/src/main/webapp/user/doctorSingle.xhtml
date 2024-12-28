@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./userMaster.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <f:metadata>
+                        <f:viewParam name="id" value="#{doctorSingleViewBean.id}" />
+                        <f:viewAction action="#{doctorSingleViewBean.loadDoctorDetails}" />
+                    </f:metadata>
+                    <section class="page-title bg-1">
+                        <div class="overlay"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="block text-center">
+                                        <span class="text-white">Doctor Details</span>
+                                        <h1 class="text-capitalize mb-5 text-lg">#{doctorSingleViewBean.selectedDoctor.firstName} #{doctorSingleViewBean.selectedDoctor.lastName}</h1>
+
+                                        <!-- <ul class="list-inline breadcumb-nav">
+                                          <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+                                          <li class="list-inline-item"><span class="text-white">/</span></li>
+                                          <li class="list-inline-item"><a href="#" class="text-white-50">Doctor Details</a></li>
+                                        </ul> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section doctor-single">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="doctor-img-block">
+                                        <h:graphicImage value="http://localhost:8080/health/userimages/#{doctorSingleViewBean.selectedDoctor.profile}" alt="Profile Picture" class="img-fluid w-100" />
+
+                                        <div class="info-block mt-4">
+                                            <h4 class="mb-0">#{doctorSingleViewBean.selectedDoctor.firstName} #{doctorSingleViewBean.selectedDoctor.lastName}</h4>
+                                            <p>#{doctorSingleViewBean.selectedDoctor.specialization}</p>
+
+                                            <!--                                            <ul class="list-inline mt-4 doctor-social-links">
+                                                                                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                                                                                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                                                                                            <li class="list-inline-item"><a href="#"><i class="icofont-skype"></i></a></li>
+                                                                                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                                                                                            <li class="list-inline-item"><a href="#"><i class="icofont-pinterest"></i></a></li>
+                                                                                        </ul>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8 col-md-6">
+                                    <div class="doctor-details mt-4 mt-lg-0">
+                                        <h2 class="text-md">Introducing to myself</h2>
+                                        <div class="divider my-4"></div>
+                                        <p>#{doctorSingleViewBean.selectedDoctor.bio}</p>
+                                        <p>
+                                            <strong>Email:</strong> #{doctorSingleViewBean.selectedDoctor.email}<br />
+                                            <strong>Phone Number:</strong> #{doctorSingleViewBean.selectedDoctor.phoneNo}<br />
+                                            <strong>Emergency Number:</strong> #{doctorSingleViewBean.selectedDoctor.emergencyNo}<br />
+                                            <strong>Gender:</strong>#{doctorSingleViewBean.selectedDoctor.gender}<br />
+                                            <strong>Address:</strong> #{doctorSingleViewBean.selectedDoctor.address}<br />
+                                            <strong>State:</strong> #{doctorSingleViewBean.selectedDoctor.state}<br />
+                                            <strong>City:</strong> #{doctorSingleViewBean.selectedDoctor.city}<br />
+                                            <strong>Pincode:</strong> #{doctorSingleViewBean.selectedDoctor.pincode}<br />
+                                            <strong>Current Hospital:</strong> #{doctorSingleViewBean.selectedDoctor.hospitalName}<br />
+                                            <strong>Website:</strong> <a href="https://www.drjohndoe.com" target="_blank">#{doctorSingleViewBean.selectedDoctor.affiliateHospital}</a><br />
+                                        </p>
+                                        <a href="http://localhost:8080/health/user/appointment.xhtml" class="btn btn-main-2 btn-round-full mt-3">Make an Appoinment<i class="icofont-simple-right ml-2  "></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section doctor-qualification gray-bg">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="section-title">
+                                        <h3>My Educational Qualifications</h3>
+                                        <div class="divider my-4"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="edu-block mb-5">
+                                        <span class="h6 text-muted">Year of Experience:</span>
+                                        <h4 class="mb-3 title-color">#{doctorSingleViewBean.selectedDoctor.yearOfExpirence}</h4>
+                                    </div>
+
+                                    <div class="edu-block">
+                                        <span class="h6 text-muted">Degree:</span>
+                                        <h4 class="mb-3 title-color">#{doctorSingleViewBean.selectedDoctor.degree}</h4>
+                                        <p>Certified by the American Board of Cardiology</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="edu-block mb-5">
+                                        <span class="h6 text-muted">Medical License:</span>
+                                        <h4 class="mb-3 title-color">#{doctorSingleViewBean.selectedDoctor.medicalLicense}</h4>
+                                    </div>
+
+                                    <div class="edu-block">
+                                        <span class="h6 text-muted">Affiliated Hospital:</span>
+                                        <h4 class="mb-3 title-color">#{doctorSingleViewBean.selectedDoctor.affiliateHospital}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section doctor-skills">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <h3>Specialization</h3>
+                                    <div class="divider my-4"></div>
+                                    <p>
+                                        #{doctorSingleViewBean.selectedDoctor.specialization}
+                                    </p>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="skill-list">
+                                        <h5 class="mb-4">Current Position</h5>
+                                        <ul class="list-unstyled department-service">
+                                            <li><i class="icofont-check mr-2"></i>#{doctorSingleViewBean.selectedDoctor.currentPosition}</li>
+                                            <!--                        <li><i class="icofont-check mr-2"></i>Stretchers and Stretcher Accessories</li>
+                                                                    <li><i class="icofont-check mr-2"></i>Cushions and Mattresses</li>
+                                                                    <li><i class="icofont-check mr-2"></i>Cholesterol and Lipid Tests</li>
+                                                                    <li><i class="icofont-check mr-2"></i>Critical Care Medicine Specialists</li>
+                                                                    <li><i class="icofont-check mr-2"></i>Emergency Assistance</li>
+                                                                    <li><i class="icofont-check mr-2"></i>Cardiology</li>-->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="sidebar-widget gray-bg p-4">
+                                        <h5 class="mb-4">General Schedule</h5>
+                                        <ul class="list-unstyled lh-35">
+                                            <li class="d-flex justify-content-between align-items-center">
+                                                <a href="#">#{doctorSingleViewBean.selectedDoctor.workSchedule}</a>
+                                               
+                                            </li>
+
+
+
+
+
+
+
+                                            
+                                        </ul>
+                                        <div class="sidebar-contact-info mt-4">
+                                            <p class="mb-0">Need Urgent Help?</p>
+                                            <h3 class="text-color-2">#{doctorSingleViewBean.selectedDoctor.emergencyNo}</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--        <div class="row mt-5">
+                                        <div class="col-lg-6">
+                                            <div class="edu-block">
+                                                <h5 class="mb-4">Educational Qualifications</h5>
+                                                <p><strong>Degree:</strong> MBBS, MD (Cardiology)</p>
+                                                <p><strong>Certification:</strong> Board Certified Cardiologist</p>
+                                                <p><strong>Medical License:</strong> 123456789</p>
+                                                <p><strong>Year of Experience:</strong> 15 Years</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="edu-block">
+                                                <h5 class="mb-4">Professional Information</h5>
+                                                <p><strong>Hospital Name:</strong> City Heart Institute</p>
+                                                <p><strong>Current Position:</strong> Senior Cardiologist</p>
+                                                <p><strong>Affiliated Hospital:</strong> Global Health Center</p>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                        </div>
+                    </section>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

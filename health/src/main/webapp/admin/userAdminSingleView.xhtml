@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="mb-0 headerStyle">User   View</div><br/>
+                                </div>
+
+                                <h:form>
+                                    <div class="card tblStyle responsive">
+                                        <div class="row">
+                                            <div class="col-10"></div>
+                                            <div class="col-2"></div>
+                                        </div>
+                                        <br/>
+                                        <!-- Table Wrapper -->
+                                        <ul>
+                                            <li><h4>Role Name :</h4> #{userAdminViewBean.selectedUser.roleId.name}</li><br/>
+                                            <li><h4>Email :</h4> #{userAdminViewBean.selectedUser.email}</li><br/>
+                                            <li><h4>First Name :</h4> #{userAdminViewBean.selectedUser.firstName}</li><br/>
+                                            <li><h4>Last Name :</h4> #{userAdminViewBean.selectedUser.lastName}</li><br/>
+                                            <li><h4>Phone No :</h4> #{userAdminViewBean.selectedUser.phoneNo}</li><br/>
+                                            <li><h4>Date of Birth :</h4> #{userAdminViewBean.selectedUser.dateOfBirth}</li><br/>
+                                            <li><h4>Gender :</h4> #{userAdminViewBean.selectedUser.gender}</li><br/>
+                                            <li><h4>Address :</h4> #{userAdminViewBean.selectedUser.address}</li><br/>
+                                            <li><h4>Bio :</h4> #{userAdminViewBean.selectedUser.bio}</li><br/>
+                                            <li><h4>Specialization :</h4> #{userAdminViewBean.selectedUser.specialization}</li><br/>
+                                            <li><h4>Medical License :</h4> #{userAdminViewBean.selectedUser.medicalLicense}</li><br/>
+                                            <li><h4>Year of Experience :</h4> #{userAdminViewBean.selectedUser.yearOfExpirence}</li><br/>
+                                            <li><h4>Degree :</h4> #{userAdminViewBean.selectedUser.degree}</li><br/>
+                                            <li><h4>Emergency Contact :</h4> #{userAdminViewBean.selectedUser.emergencyNo}</li><br/>
+                                            <li><h4>Profile :</h4> <h:graphicImage value="http://localhost:8080/health/userimages/#{userAdminViewBean.selectedUser.profile}" width="100" height="100" alt="#{userAdminViewBean.selectedUser.profile}"/></li><br/>
+                                            <li><h4>Pincode :</h4> #{userAdminViewBean.selectedUser.pincode}</li><br/>
+                                            <li><h4>State :</h4> #{userAdminViewBean.selectedUser.state}</li><br/>
+                                            <li><h4>City :</h4> #{userAdminViewBean.selectedUser.city}</li><br/>
+                                            <li><h4>Affiliated Hospital :</h4> #{userAdminViewBean.selectedUser.affiliateHospital}</li><br/>
+                                            <li><h4>Current Position :</h4> #{userAdminViewBean.selectedUser.currentPosition}</li><br/>
+                                            <li><h4>Work Schedule :</h4> #{userAdminViewBean.selectedUser.workSchedule}</li><br/>
+                                            <li><h4>Registration Date :</h4> #{userAdminViewBean.selectedUser.registrationDate}</li><br/>
+                                            <li><h4>Hospital Name :</h4> #{userAdminViewBean.selectedUser.hospitalName}</li><br/>
+                                            <li><h4>Website :</h4> #{userAdminViewBean.selectedUser.website}</li><br/>
+                                            <li><h4>Subscription Plan Name :</h4> #{userAdminViewBean.selectedUser.subscriptionId.planName}</li><br/>
+                                            <li><h4>Subscription Expiry Date :</h4> #{userAdminViewBean.selectedUser.expiaryDate}</li><br/>
+                                        </ul>
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </main>  
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

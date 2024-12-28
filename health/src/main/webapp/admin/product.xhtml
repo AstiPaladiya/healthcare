@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main"> <!--begin::App Content Header-->
+                    <div class="app-content-header"> <!--begin::Container-->
+                        <div class="container-fluid"> <!--begin::Row-->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0">Role</h3>
+                                </div>
+
+                                <h:form>
+                                    <h1><h:outputText value="List"/></h1>
+                                    <h:dataTable value="#{productBean.dataSCollection}" var="item">
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Id"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.id}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="CompanyName"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.companyName}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Prescription"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.prescription}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="MedicineName"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.medicineName}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Description"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.description}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Price"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.price}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Img1"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.img1}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Img2"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.img2}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Img3"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.img3}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Img4"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.img4}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Quantity"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.quantity}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="AvailableQuantity"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.availableQuantity}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Offer"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.offer}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="ProductStatus"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.productStatus}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="BlockedBy"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.blockedBy}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="CreatedAt"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.createdAt}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="UpdatedAt"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.updatedAt}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                                            </h:outputText>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="CategoryId"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.categoryId}"/>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="UserId"/>
+                                            </f:facet>
+                                            <h:outputText value="#{item.userId}"/>
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

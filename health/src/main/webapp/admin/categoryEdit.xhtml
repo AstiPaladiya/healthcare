@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./adminMaster.xhtml">
+
+            <ui:define name="content">
+                <main class="app-main main-content">
+                    <div class="app-content-header">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <h3 class="mb-0 headerStyle">Edit Category</h3>
+                                </div>
+                            </div>
+                            <br/>
+
+                            <h:form enctype="multipart/form-data">
+                                <div class="card frmCard">
+                                    <h:panelGrid columns="1" styleClass="form-panel-grid">
+                                        <!-- Category ID -->
+                                        <!--                                        <div class="form-group">
+                                                                                    <h:outputLabel value="Id:" for="id" />
+                                                                                    <h:inputText id="id" value="#{categoryBean.current.id}" class="form-control inpt" title="Id" readonly="true" />
+                                                                                </div><br/>-->
+<!--                                        <div class="form-group">
+                                            <h:outputLabel value="Role Name:" for="roleId" />
+                                            <h:selectOneMenu id="roleId" value="#{categoryBean.current.roleId}" class="form-control inpt" title="Role">
+                                                <f:selectItems value="#{adminBean.getDataCollection()}" var="role" itemLabel="#{role.name}" itemValue="#{role.id}" />
+                                            </h:selectOneMenu>
+                                        </div><br/>-->
+                                        <!-- Category Name -->
+                                        <div class="form-group">
+                                            <h:outputLabel value="Name:" for="name" />
+                                            <h:inputText id="name" value="#{categoryBean.current.name}" class="form-control inpt" title="Name"  />
+                                        </div><br/>
+
+                                        <!-- Category Description -->
+                                        <div class="form-group">
+                                            <h:outputLabel value="Description:" for="description" />
+                                            <h:inputTextarea rows="4" cols="30" id="description" value="#{categoryBean.current.description}" class="form-control inpt" title="Description" />
+                                        </div><br/>
+
+                                        <!-- Category Image -->
+                                         <div class="form-group">
+                                                <h:outputLabel value="Image:" for="image" /><br/>
+                                                <h:inputFile id="photo" value="#{categoryBean.photofile}" class="form-control inpt" />
+                                                <h:message for="photo" />
+                                            </div><br/><br/>
+                                        <!-- Submit Button -->
+                                        <div class="row">
+                                            <div class="col text-right">
+                                                <h:commandButton value="Update Category" class="btn btn-primary" action="#{categoryBean.updateCategory()}" />
+                                            </div>
+                                        </div><br/>
+                                    </h:panelGrid>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </main>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

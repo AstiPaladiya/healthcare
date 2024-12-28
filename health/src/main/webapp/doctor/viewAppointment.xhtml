@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./doctorMaster.xhtml">
+
+            <ui:define name="content">
+                <f:view>
+                    <main class="app-main main-content"> <!--begin::App Content Header-->
+                        <div class="app-content-header"> <!--begin::Container-->
+                            <div class="container-fluid"> <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="mb-0 headerStyle">Appointment</div><br/>
+                                    </div>
+
+
+                                    <h:form>
+                                     
+                                        <h:dataTable value="#{adminAppointmentBean.appointments}" class="table" var="item">
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="No"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.id}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="AppointmentDate"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.appointmentDate}">
+                                                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                                                </h:outputText>
+                                            </h:column>
+                                         
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="PaitentName"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.paitentName}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="PaitentPhoneno"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.paitentPhoneno}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="PaitentEmail"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.paitentEmail}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="Information"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.information}"/>
+                                            </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value="Status"/>
+                                                </f:facet>
+                                                <h:outputText value="#{item.status}"/>
+                                            </h:column>
+                                           
+                                         
+                                          
+                                        </h:dataTable>
+                                    </h:form>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </main>
+                                                        </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
